@@ -805,6 +805,7 @@ const SITE_DATA = {
   // ----------------------------------------------------------
   contact: {
     email: "hi@terry-mann.com",
+    image: "images/contact.gif",
     social: [
       { label: "LinkedIn",  href: "https://linkedin.com/in/terrypmann" },
       { label: "Instagram", href: "https://instagram.com/terrypmann" }
@@ -815,10 +816,17 @@ const SITE_DATA = {
   // FOOTER
   // ----------------------------------------------------------
   footer: {
-    acknowledgement: `I acknowledge the Traditional Owners of the land where I work and live. I pay my respects to Elders past, present and emerging. I celebrate the stories, culture and traditions of Aboriginal and Torres Strait Islander Elders of all communities who also work and live on this land.`,
+    acknowledgement1: "I acknowledge the Traditional Owners of the land where I work and live. I pay my respects to Elders past, present and emerging.",
+    acknowledgement2: "I celebrate the stories, culture and traditions of Aboriginal and Torres Strait Islander Elders of all communities who also work and live on this land.",
     charitiesNote: "A portion of the profits from my business are donated to the following charities each month:",
-    charitiesImage: "images/charity-logos.png",
-    charitiesImageAlt: "Charity logos"
+    charities: [
+      { src: "images/charities/asrc.png",    alt: "ASRC - Asylum Seeker Resource Centre" },
+      { src: "images/charities/acf.png",     alt: "Australian Conservation Foundation" },
+      { src: "images/charities/redcross.png", alt: "Australian Red Cross" },
+      { src: "images/charities/lifeline.png", alt: "Lifeline" },
+      { src: "images/charities/naaja.png",   alt: "NAAJA" },
+      { src: "images/charities/oxfam.png",   alt: "Oxfam" }
+    ]
   }
 
 };

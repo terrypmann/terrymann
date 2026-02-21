@@ -40,10 +40,6 @@
     return el('h2', { class: 'section-heading' }, text);
   }
 
-  function backToTop() {
-    return el('a', { href: '#top', class: 'back-to-top' }, '🔝 Back to top');
-  }
-
   // ── Video facade ────────────────────────────────────────
 
   function videoFacade(youtubeId, label) {
@@ -73,12 +69,12 @@
     return wrapper;
   }
 
-  // ── Work item (used by Ads, TV, Orchestral, Memes) ──────
+  // ── Work item ────────────────────────────────────────────
 
   function workItem(item) {
     const div = el('div', { class: 'work-item' });
 
-    // Visual first (video / link-image / still image)
+    // Visual first
     if (item.youtubeId) {
       div.appendChild(videoFacade(item.youtubeId, item.title));
     } else if (item.type === 'link-image') {
@@ -98,14 +94,9 @@
     }
     div.appendChild(titleEl);
 
-    // Description
-    if (item.desc) div.appendChild(el('p', { class: 'work-item-desc' }, item.desc));
-
-    // Extended credits (orchestral)
+    if (item.desc)    div.appendChild(el('p', { class: 'work-item-desc' }, item.desc));
     if (item.credits) div.appendChild(el('p', { class: 'work-item-credits', html: item.credits }));
-
-    // Credit line (agency/label)
-    if (item.credit) div.appendChild(el('p', { class: 'work-credit', html: item.credit }));
+    if (item.credit)  div.appendChild(el('p', { class: 'work-credit', html: item.credit }));
 
     return div;
   }
@@ -113,23 +104,22 @@
 
   // ══════════════════════════════════════════════════════════
   // SECTION 1: BIO & REEL
+  // Layout: [photo (top-left)] [reel video (right, tall)]
+  //         [text  (bot-left)] [                        ]
   // ══════════════════════════════════════════════════════════
   (function renderBio() {
     const { sec, inner } = section('bioandreel');
 
-    // Photo
     inner.appendChild(el('img', {
       class: 'bio-photo',
       src: d.bio.photo,
       alt: d.bio.photoAlt
     }));
 
-    // Bio text
     const textDiv = el('div', { class: 'bio-text' });
     d.bio.paragraphs.forEach(p => textDiv.appendChild(el('p', { html: p })));
     inner.appendChild(textDiv);
 
-    // Reel — full width below, spanning both columns
     if (d.reel && d.reel.youtubeId) {
       const reelDiv = el('div', { class: 'bio-reel' });
       reelDiv.appendChild(videoFacade(d.reel.youtubeId, d.reel.label));
@@ -149,7 +139,6 @@
     const grid = el('div', { class: 'work-grid' });
     d.ads.forEach(item => grid.appendChild(workItem(item)));
     inner.appendChild(grid);
-    inner.appendChild(backToTop());
     main.appendChild(sec);
   })();
 
@@ -163,7 +152,6 @@
     const grid = el('div', { class: 'work-grid' });
     d.tv.forEach(item => grid.appendChild(workItem(item)));
     inner.appendChild(grid);
-    inner.appendChild(backToTop());
     main.appendChild(sec);
   })();
 
@@ -177,13 +165,12 @@
     const grid = el('div', { class: 'work-grid' });
     d.orchestral.forEach(item => grid.appendChild(workItem(item)));
     inner.appendChild(grid);
-    inner.appendChild(backToTop());
     main.appendChild(sec);
   })();
 
 
   // ══════════════════════════════════════════════════════════
-  // SECTION 5: RELEASES
+  // SECTION 5: RELEASES — 3 col text grid
   // ══════════════════════════════════════════════════════════
   (function renderReleases() {
     const { sec, inner } = section('releases');
@@ -198,20 +185,17 @@
       const meta = el('p', { class: 'release-meta' });
       meta.innerHTML = item.meta + (item.guests ? `<br>${item.guests}` : '');
       div.appendChild(meta);
-      if (item.embed) {
-        div.appendChild(el('div', { class: 'release-embed', html: item.embed }));
-      }
+      if (item.embed) div.appendChild(el('div', { class: 'release-embed', html: item.embed }));
       grid.appendChild(div);
     });
 
     inner.appendChild(grid);
-    inner.appendChild(backToTop());
     main.appendChild(sec);
   })();
 
 
   // ══════════════════════════════════════════════════════════
-  // SECTION 6: LIBRARIES
+  // SECTION 6: LIBRARIES — 2 col
   // ══════════════════════════════════════════════════════════
   (function renderLibraries() {
     const { sec, inner } = section('libraries');
@@ -230,7 +214,6 @@
     });
 
     inner.appendChild(grid);
-    inner.appendChild(backToTop());
     main.appendChild(sec);
   })();
 
@@ -247,17 +230,20 @@
     const grid = el('div', { class: 'work-grid' });
     d.memes.forEach(item => grid.appendChild(workItem(item)));
     inner.appendChild(grid);
-    inner.appendChild(backToTop());
     main.appendChild(sec);
   })();
 
 
   // ══════════════════════════════════════════════════════════
-  // SECTION 8: STUDIO
+  // SECTION 8: STUDIO — image left, specs right
   // ══════════════════════════════════════════════════════════
   (function renderStudio() {
     const { sec, inner } = section('studio');
-    inner.appendChild(sectionHeading('Home Studio'));
+
+    // Heading spans full width above the two-col layout
+    const headingWrapper = el('div', { class: 'studio-heading-wrapper' });
+    headingWrapper.appendChild(sectionHeading('Home Studio'));
+    inner.appendChild(headingWrapper);
 
     inner.appendChild(el('img', {
       class: 'studio-photo',
@@ -272,7 +258,7 @@
       specsDiv.appendChild(p);
     });
     inner.appendChild(specsDiv);
-    inner.appendChild(backToTop());
+
     main.appendChild(sec);
   })();
 
@@ -288,16 +274,17 @@
     d.testimonials.forEach(item => {
       const card = el('div', { class: 'testimonial-card' });
       card.appendChild(el('img', { class: 'testimonial-photo', src: item.photo, alt: item.name }));
-      card.appendChild(el('p', { class: 'testimonial-body' }, item.quote));
+      const content = el('div', { class: 'testimonial-content' });
+      content.appendChild(el('p', { class: 'testimonial-body' }, item.quote));
       const attr = el('div', { class: 'testimonial-attribution' });
       attr.appendChild(el('strong', {}, item.name));
       attr.appendChild(el('span', {}, item.title));
-      card.appendChild(attr);
+      content.appendChild(attr);
+      card.appendChild(content);
       grid.appendChild(card);
     });
 
     inner.appendChild(grid);
-    inner.appendChild(backToTop());
     main.appendChild(sec);
   })();
 
@@ -308,49 +295,48 @@
   (function renderContact() {
     const { sec, inner } = section('contact');
     inner.appendChild(sectionHeading('Contact'));
-    inner.appendChild(el('a', { href: `mailto:${d.contact.email}`, class: 'contact-email' }, d.contact.email));
-    const social = el('div', { class: 'contact-social' });
-    d.contact.social.forEach(s => {
-      social.appendChild(el('a', { href: s.href, target: '_blank', rel: 'noopener' }, s.label));
-    });
-    inner.appendChild(social);
-    inner.appendChild(backToTop());
+
+    const line1 = el('p', { class: 'contact-text' });
+    line1.innerHTML = `For all project enquiries, say <a href="mailto:${d.contact.email}">${d.contact.email}</a>`;
+    inner.appendChild(line1);
+
+    const line2 = el('p', { class: 'contact-text' });
+    const socialLinks = d.contact.social.map(s =>
+      `<a href="${s.href}" target="_blank" rel="noopener">${s.label}</a>`
+    ).join(' and ');
+    line2.innerHTML = `To stay in the loop, you can find me on ${socialLinks}.`;
+    inner.appendChild(line2);
+
+    if (d.contact.image) {
+      const imgWrap = el('div', { class: 'contact-image' });
+      imgWrap.appendChild(el('img', { src: d.contact.image, alt: 'Contact' }));
+      inner.appendChild(imgWrap);
+    }
+
     main.appendChild(sec);
   })();
 
 
   // ══════════════════════════════════════════════════════════
-  // FOOTER
+  // FOOTER — dark bg, back to top, acknowledgement, charities
   // ══════════════════════════════════════════════════════════
   (function renderFooter() {
     const footer = document.getElementById('site-footer');
-    const inner = el('div', { class: 'footer-inner' });
 
-    const navItems = [
-      ['#bioandreel','Bio & Reel'], ['#ads','Ads'], ['#tv','TV & Film'],
-      ['#orchestral','Orchestral'], ['#releases','Releases'], ['#libraries','Libraries'],
-      ['#memes','Memes'], ['#studio','Studio'], ['#testimonials','Testimonials'],
-      ['#contact','Contact']
-    ];
-    const ul = el('ul', { class: 'footer-nav' });
-    navItems.forEach(([href, label]) => {
-      const li = el('li');
-      li.appendChild(el('a', { href }, label));
-      ul.appendChild(li);
+    footer.appendChild(el('a', { href: '#top', class: 'footer-back-to-top' }, '🔝'));
+    footer.appendChild(el('p', { class: 'footer-acknowledgement' }, d.footer.acknowledgement1));
+    footer.appendChild(el('p', { class: 'footer-acknowledgement' }, d.footer.acknowledgement2));
+    footer.appendChild(el('p', { class: 'footer-charities-note' }, d.footer.charitiesNote));
+
+    const logos = el('div', { class: 'footer-charities' });
+    d.footer.charities.forEach(c => {
+      logos.appendChild(el('img', { src: c.src, alt: c.alt }));
     });
-    inner.appendChild(ul);
-
-    inner.appendChild(el('p', { class: 'footer-acknowledgement' }, d.footer.acknowledgement));
-    inner.appendChild(el('p', { class: 'footer-acknowledgement' }, d.footer.charitiesNote));
-    inner.appendChild(el('div', { class: 'footer-charities' },
-      el('img', { src: d.footer.charitiesImage, alt: d.footer.charitiesImageAlt })
-    ));
+    footer.appendChild(logos);
 
     const copy = el('p', { class: 'footer-copy' });
     copy.innerHTML = `&copy; ${new Date().getFullYear()} Terry Mann. All rights reserved.`;
-    inner.appendChild(copy);
-
-    footer.appendChild(inner);
+    footer.appendChild(copy);
   })();
 
 
@@ -361,7 +347,7 @@
   // Nav scroll shadow
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => {
-    nav.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,0.07)' : '';
+    nav.style.boxShadow = window.scrollY > 10 ? '0 2px 10px rgba(0,0,0,0.25)' : '';
   }, { passive: true });
 
   // Mobile hamburger
@@ -378,7 +364,7 @@
     });
   });
 
-  // Video click-to-play (event delegation)
+  // Video click-to-play
   document.addEventListener('click', handleVideo);
   document.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') handleVideo(e);
