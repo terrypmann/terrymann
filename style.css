@@ -84,7 +84,7 @@ nav {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--nav-text);
-  padding: 0 40px;
+  padding: 0 20px;
   white-space: nowrap;
   transition: opacity 0.2s;
   line-height: 1;
