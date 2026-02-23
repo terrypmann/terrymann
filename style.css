@@ -2,7 +2,7 @@
    TERRY MANN — COMPOSER  |  style.css
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;1,9..144,300&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -52,10 +52,10 @@ nav {
 
 /* SEO-only: visually hidden h1 */
 .nav-logo {
-  font-family: 'Fraunces', serif;
-  font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 0.08em;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
   color: rgba(255,255,255,0.9);
   text-decoration: none;
   white-space: nowrap;
@@ -135,11 +135,11 @@ section:nth-of-type(even) { background: var(--cream-b); }
 
 /* H2 — section headings: Oswald 300, ~16px, very spaced */
 .section-heading {
-  font-family: 'Fraunces', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 28px;
-  font-weight: 300;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--text);
   text-align: center;
   margin-bottom: 80px;
@@ -147,10 +147,10 @@ section:nth-of-type(even) { background: var(--cream-b); }
 
 /* H3 — work item titles: Oswald 400, ~15px */
 .work-item-title {
-  font-family: 'Fraunces', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 20px;
-  font-weight: 300;
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  letter-spacing: 0;
   margin: 16px 0 8px;
   color: var(--text);
 }
@@ -328,11 +328,11 @@ section:nth-of-type(even) { background: var(--cream-b); }
 }
 
 .release-title {
-  font-family: 'Fraunces', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.25;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   margin-bottom: 8px;
   color: var(--text);
 }
@@ -362,10 +362,10 @@ section:nth-of-type(even) { background: var(--cream-b); }
 .library-item { text-align: center; }
 
 .library-item h3 {
-  font-family: 'Fraunces', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 22px;
-  font-weight: 300;
-  letter-spacing: 0.04em;
+  font-weight: 400;
+  letter-spacing: 0;
   text-transform: uppercase;
   margin-bottom: 14px;
   color: var(--text);
@@ -451,10 +451,10 @@ section:nth-of-type(even) { background: var(--cream-b); }
 
 .testimonial-attribution strong {
   display: block;
-  font-family: 'Fraunces', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 15px;
-  font-weight: 300;
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--text);
 }
 
@@ -665,10 +665,10 @@ footer {
 
 .testimonial-attribution strong {
   display: block;
-  font-family: 'Fraunces', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 15px;
-  font-weight: 300;
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--text);
   line-height: 1.3;
 }
