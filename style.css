@@ -574,6 +574,45 @@ footer {
 
 
 /* ── RESPONSIVE ──────────────────────────────────────────── */
+
+@media (max-width: 1400px) and (min-width: 769px) {
+  nav {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 6%;
+    gap: 0;
+  }
+
+  /* Sections need more scroll-margin to account for taller nav */
+  section { scroll-margin-top: calc(var(--nav-h) * 1.8); }
+
+  .nav-logo {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    margin-bottom: 2px;
+    font-size: 11px;
+  }
+
+  .nav-links {
+    height: 32px;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .nav-links a {
+    height: 32px;
+    font-size: 11px;
+    padding: 0 12px;
+  }
+
+  .nav-links li + li::before {
+    font-size: 11px;
+  }
+}
+
 @media (max-width: 1024px) {
   .work-grid         { grid-template-columns: repeat(2, 1fr); }
   .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
