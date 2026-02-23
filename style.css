@@ -10,7 +10,7 @@
   --cream-a:    #f4f1ea;
   --cream-b:    #f7f5f0;
   --text:       #1a1a1a;
-  --subtext:    #555555;
+  --subtext:    #3a3a3a;
   --credit:     #888888;
   --amber:      #c47a2a;
   --nav-bg:     #272624;
@@ -84,7 +84,7 @@ nav {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--nav-text);
-  padding: 0 12px;
+  padding: 0 40px;
   white-space: nowrap;
   transition: opacity 0.2s;
   line-height: 1;
@@ -133,7 +133,7 @@ section:nth-of-type(even) { background: var(--cream-b); }
   text-transform: uppercase;
   color: var(--text);
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 /* H3 — work item titles: Oswald 400, ~15px */
@@ -291,7 +291,7 @@ section:nth-of-type(even) { background: var(--cream-b); }
 .work-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: calc(var(--gap) * 2.5) calc(var(--gap) * 1.2);
+  gap: calc(var(--gap) * 2.5) calc(var(--gap) * 2);
 }
 
 .work-item .video-wrapper,
@@ -312,7 +312,7 @@ section:nth-of-type(even) { background: var(--cream-b); }
 .releases-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--gap) calc(var(--gap) * 1.2);
+  gap: calc(var(--gap) * 2) calc(var(--gap) * 2);
 }
 
 .release-title {
@@ -328,8 +328,8 @@ section:nth-of-type(even) { background: var(--cream-b); }
 .release-meta {
   font-size: 17px;
   font-weight: 400;
-  color: var(--subtext);
-  line-height: 1.5;
+  color: var(--text);
+  line-height: 1.55;
   margin-bottom: 12px;
 }
 
@@ -405,13 +405,13 @@ section:nth-of-type(even) { background: var(--cream-b); }
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--gap) calc(var(--gap) * 1.2);
+  gap: calc(var(--gap) * 2) calc(var(--gap) * 2.5);
 }
 
 .testimonial-card {
   display: flex;
   flex-direction: row;
-  gap: 14px;
+  gap: 24px;
   align-items: flex-start;
 }
 

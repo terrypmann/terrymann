@@ -62,9 +62,17 @@
     });
     const thumbImg = document.createElement('img');
     thumbImg.alt = label || 'Video thumbnail';
+    thumbImg.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
+    let thumbStage = 0;
+    const thumbSizes = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault'];
     thumbImg.onerror = function() {
-      this.onerror = null;
-      this.src = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
+      thumbStage++;
+      if (thumbStage < thumbSizes.length) {
+        this.src = `https://img.youtube.com/vi/${youtubeId}/${thumbSizes[thumbStage]}.jpg`;
+      } else {
+        // All failed - hide image, show styled placeholder bg
+        this.style.display = 'none';
+      }
     };
     thumbImg.src = `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`;
     facade.appendChild(thumbImg);
