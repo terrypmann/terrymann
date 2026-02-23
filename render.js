@@ -418,6 +418,30 @@
     });
   })();
 
+  // Active nav on scroll — IntersectionObserver watches each section
+  (function initActiveNav() {
+    const navLinks = document.querySelectorAll('#nav-links a');
+
+    function setActive(id) {
+      navLinks.forEach(a => {
+        const href = a.getAttribute('href').replace('#', '');
+        a.classList.toggle('nav-active', href === id);
+      });
+    }
+
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, {
+      rootMargin: '-40% 0px -55% 0px', // triggers when section is in middle band of viewport
+      threshold: 0
+    });
+
+    sections.forEach(sec => observer.observe(sec));
+  })();
+
   // Nav scroll shadow
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => {

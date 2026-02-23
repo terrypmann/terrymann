@@ -15,7 +15,7 @@
   --subtext-inv:#b0ab a3;
   --credit:     #888888;
   --amber:      #c47a2a;
-  --nav-bg:     #3a3836;
+  --nav-bg:     #2a2826;
   --nav-text:   #ffffff;
   --nav-h:      56px;
   --gap:        28px;
@@ -102,6 +102,7 @@ nav {
 }
 
 .nav-links a:hover { opacity: 0.55; color: var(--nav-text); }
+.nav-links a.nav-active { opacity: 0.45; }
 
 .nav-links li + li::before {
   content: '·';
@@ -119,7 +120,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 100px 0 80px;
+  padding: 80px 0 100px;
   scroll-margin-top: 0;
 }
 
@@ -158,13 +159,14 @@ section:nth-of-type(even) {
   line-height: 1;
   color: var(--s-text);
   text-align: center;
-  margin-bottom: 80px;
+  margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 /* H3 — work item titles: Oswald 400, ~15px */
 .work-item-title {
   font-family: 'DM Serif Display', serif;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
   letter-spacing: 0;
   margin: 16px 0 8px;
@@ -380,10 +382,10 @@ section:nth-of-type(even) {
 
 .library-item h3 {
   font-family: 'DM Serif Display', serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 400;
   letter-spacing: 0;
-  text-transform: uppercase;
+  text-transform: none;
   margin-bottom: 14px;
   color: var(--s-text);
 }
@@ -402,12 +404,14 @@ section:nth-of-type(even) {
 
 /* ── MEMES INTRO ─────────────────────────────────────────── */
 .section-intro {
-  font-size: 17px;
-  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
   color: var(--s-sub);
-  line-height: 1.4;
-  max-width: 900px;
-  margin: 0 0 36px;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
 }
 
 
