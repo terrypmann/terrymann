@@ -114,7 +114,11 @@
     div.appendChild(titleEl);
 
     if (item.desc)    div.appendChild(el('p', { class: 'work-item-desc' }, item.desc));
-    if (item.credits) div.appendChild(el('p', { class: 'work-item-credits', html: item.credits }));
+    if (item.credits) {
+      const creditsWrap = el('div', { class: 'quote-style' });
+      creditsWrap.appendChild(el('p', { class: 'work-item-credits', html: item.credits }));
+      div.appendChild(creditsWrap);
+    }
     if (item.credit) {
       const creditWrap = el('div', { class: 'quote-style' });
       creditWrap.appendChild(el('p', { class: 'work-credit', html: item.credit }));
