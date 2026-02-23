@@ -552,16 +552,14 @@ footer {
 }
 
 .footer-charities {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto 32px;
-  width: 100%;
+  margin: 0 -6% 32px;
 }
 
 .footer-charities img {
-  height: 120px;
   width: auto;
-  max-width: 100%;
+  height: auto;
+  max-width: none;
+  display: block;
   filter: brightness(0) invert(1);
   opacity: 0.85;
 }
