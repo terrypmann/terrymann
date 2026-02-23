@@ -110,23 +110,16 @@ section {
   justify-content: center;
   padding: 80px 0 60px;
   scroll-margin-top: 0;
-  scroll-snap-align: start;
 }
 
 section:nth-of-type(odd)  { background: var(--cream-a); }
 section:nth-of-type(even) { background: var(--cream-b); }
 
-/* Scroll snap on html for parallax-like feel */
-html {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-}
+/* scroll-snap removed — graceful free scrolling */
 
 .section-inner {
-  max-width: 1160px;
   width: 100%;
-  margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 6%;
 }
 
 
@@ -477,9 +470,8 @@ html {
 /* ── FOOTER ──────────────────────────────────────────────── */
 footer {
   background: var(--nav-bg);
-  padding: 40px 48px 32px;
+  padding: 40px 6% 32px;
   text-align: center;
-  scroll-snap-align: start;
 }
 
 .footer-back-to-top {
@@ -551,8 +543,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  /* Disable scroll-snap on mobile — too aggressive */
-  html { scroll-snap-type: none; }
   section { min-height: auto; padding: 64px 0 48px; }
 
   nav { justify-content: space-between; padding: 0 16px; }
