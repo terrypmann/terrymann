@@ -383,13 +383,13 @@ const SITE_DATA = {
       title: "ABC: The Wonder Gang",
       desc: "Theme song, stings and 32 x episode scores over 2 seasons for ABCKids' The Wonder Gang.",
       credit: '<a href="https://iview.abc.net.au/show/wonder-gang" target="_blank" rel="noopener">iview.abc.net.au/show/wonder-gang</a>',
-      youtubeId: "YOUTUBE_ID_WONDERGANG"
+      youtubeId: "6uKc3QDWrVw"
     },
     {
       title: "ABC: Reef School",
       desc: "22 x episode scores over 2 seasons for ABCKids' Reef School.",
       credit: '<a href="https://iview.abc.net.au/show/reef-school" target="_blank" rel="noopener">iview.abc.net.au/show/reef-school</a>',
-      youtubeId: "YOUTUBE_ID_REEFSCHOOL"
+      youtubeId: "Fo7HvAczOMQ"
     },
     {
       title: "ABC: Giggle & Hoot",
@@ -401,19 +401,19 @@ const SITE_DATA = {
       title: "Netflix: Never Have I Ever",
       desc: "'Orlean – Faster' featured in series 2 of Netflix's coming of age dramedy, Never Have I Ever.",
       credit: "Record Label: Hotel Motel",
-      youtubeId: "DjXGijc26I8"
+      youtubeId: "Vq3-PBlqJEs"
     },
     {
       title: "HBO: The Sex Lives of College Girls",
       desc: "'Orlean – Horizons' used in S01E01 of Mindy Kaling's coming of age comedy, The Sex Lives of College Girls.",
       credit: "Record Label: Hotel Motel",
-      youtubeId: "NU2S5GrDOHE" 
+      youtubeId: "Igtr1KIlb24" 
     },
     {
       title: "HBO: Search Party",
       desc: "3 x Orlean songs used in series 4 and 5 of HBO Max's dark comedy thriller, Search Party.",
       credit: "Record Label: Hotel Motel",
-      youtubeId: "Juh-dDhIdEI"
+      youtubeId: "2uGd0Pe0CTc"
     },
     {
       title: "Showtime: The L Word",
