@@ -325,7 +325,7 @@
       const content = el('div', { class: 'testimonial-content' });
       content.appendChild(el('p', { class: 'testimonial-body' }, item.quote));
       const attr = el('div', { class: 'testimonial-attribution' });
-      attr.appendChild(el('strong', {}, item.firstName || item.name));
+      attr.appendChild(el('strong', {}, item.name));
       attr.appendChild(el('span', {}, item.title));
       content.appendChild(attr);
       card.appendChild(content);
@@ -379,6 +379,11 @@
     const footer = document.getElementById('site-footer');
 
     footer.appendChild(el('a', { href: '#top', class: 'footer-back-to-top' }, '🔝'));
+    if (d.footer.logoImage) {
+      const logoWrap = el('div', { class: 'footer-logo-wrap' });
+      logoWrap.appendChild(el('img', { src: d.footer.logoImage, alt: 'Terry Mann - Composer', class: 'footer-logo-img' }));
+      footer.appendChild(logoWrap);
+    }
     if (d.footer.acknowledgement1) footer.appendChild(el('p', { class: 'footer-acknowledgement' }, d.footer.acknowledgement1));
     footer.appendChild(el('p', { class: 'footer-charities-note' }, d.footer.charitiesNote));
 
