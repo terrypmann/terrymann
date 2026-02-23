@@ -52,21 +52,28 @@ nav {
 
 /* SEO-only: visually hidden h1 */
 .nav-logo {
-  position: absolute;
-  width: 1px; height: 1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
   white-space: nowrap;
+  margin-right: 24px;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
 }
+.nav-logo:hover { opacity: 0.6; }
 
 .nav-links {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   flex-wrap: nowrap;
   gap: 0;
   height: var(--nav-h);
+  flex: 1;
 }
 
 .nav-links li {
@@ -80,12 +87,12 @@ nav {
   align-items: center;
   height: var(--nav-h);
   font-family: 'Inter', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--nav-text);
-  padding: 0 36px;
+  padding: 0 18px;
   white-space: nowrap;
   transition: opacity 0.2s;
   line-height: 1;
@@ -129,9 +136,9 @@ section:nth-of-type(even) { background: var(--cream-b); }
 /* H2 — section headings: Oswald 300, ~16px, very spaced */
 .section-heading {
   font-family: 'Fraunces', serif;
-  font-size: 13px;
+  font-size: 28px;
   font-weight: 300;
-  letter-spacing: 0.55em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text);
   text-align: center;
@@ -201,7 +208,7 @@ section:nth-of-type(even) { background: var(--cream-b); }
 
 .bio-text p {
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.6;
   color: var(--subtext);
@@ -356,9 +363,9 @@ section:nth-of-type(even) { background: var(--cream-b); }
 
 .library-item h3 {
   font-family: 'Fraunces', serif;
-  font-size: 13px;
+  font-size: 22px;
   font-weight: 300;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: 14px;
   color: var(--text);
@@ -704,4 +711,45 @@ footer {
 .contact-image video {
   width: 100%;
   display: block;
+}
+
+/* ── LIGHTBOX ────────────────────────────────────────────── */
+#lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+#lightbox-overlay.open { display: flex; }
+#lightbox-img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 16px 60px rgba(0,0,0,0.6);
+}
+#lightbox-close {
+  position: absolute;
+  top: 20px; right: 28px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s;
+}
+#lightbox-close:hover { color: #fff; }
+.lightbox-trigger { cursor: zoom-in; display: block; }
+
+/* ── REEL EMBED ──────────────────────────────────────────── */
+.reel-embed iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
 }

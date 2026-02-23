@@ -63,18 +63,25 @@
     const thumbImg = document.createElement('img');
     thumbImg.alt = label || 'Video thumbnail';
     thumbImg.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
-    let thumbStage = 0;
-    const thumbSizes = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault'];
-    thumbImg.onerror = function() {
-      thumbStage++;
-      if (thumbStage < thumbSizes.length) {
-        this.src = `https://img.youtube.com/vi/${youtubeId}/${thumbSizes[thumbStage]}.jpg`;
-      } else {
-        // All failed - hide image, show styled placeholder bg
-        this.style.display = 'none';
-      }
+    // YouTube returns a 120x90 grey placeholder (HTTP 200) for missing sizes
+    // so onerror never fires. Use onload + naturalWidth check instead.
+    const thumbUrls = [
+      `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`,
+      `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`,
+      `https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`,
+    ];
+    let thumbIdx = 0;
+    function tryNextThumb() {
+      if (thumbIdx >= thumbUrls.length) return;
+      thumbImg.src = thumbUrls[thumbIdx];
+      thumbIdx++;
+    }
+    thumbImg.onload = function() {
+      // 120x90 is the grey placeholder — try next size
+      if (this.naturalWidth <= 120) tryNextThumb();
     };
-    thumbImg.src = `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`;
+    thumbImg.onerror = function() { tryNextThumb(); };
+    tryNextThumb();
     facade.appendChild(thumbImg);
     facade.appendChild(el('div', { class: 'play-btn' }));
     wrapper.appendChild(facade);
@@ -126,11 +133,17 @@
   (function renderBio() {
     const { sec, inner } = section('bioandreel');
 
-    inner.appendChild(el('img', {
+    const bioPhotoLink = el('a', {
+      class: 'lightbox-trigger',
+      href: d.bio.photo,
+      'aria-label': 'View full size photo'
+    });
+    bioPhotoLink.appendChild(el('img', {
       class: 'bio-photo',
       src: d.bio.photo,
       alt: d.bio.photoAlt
     }));
+    inner.appendChild(bioPhotoLink);
 
     const textDiv = el('div', { class: 'bio-text' });
     d.bio.paragraphs.forEach(p => textDiv.appendChild(el('p', { html: p })));
@@ -138,7 +151,16 @@
 
     if (d.reel && d.reel.youtubeId) {
       const reelDiv = el('div', { class: 'bio-reel' });
-      reelDiv.appendChild(videoFacade(d.reel.youtubeId, d.reel.label));
+      const reelWrap = el('div', { class: 'video-wrapper reel-embed' });
+      const iframe = el('iframe', {
+        src: `https://www.youtube.com/embed/${d.reel.youtubeId}?rel=0&modestbranding=1`,
+        title: d.reel.label || 'Composer Reel',
+        frameborder: '0',
+        allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+        allowfullscreen: ''
+      });
+      reelWrap.appendChild(iframe);
+      reelDiv.appendChild(reelWrap);
       inner.appendChild(reelDiv);
     }
 
@@ -261,11 +283,17 @@
     headingWrapper.appendChild(sectionHeading('Home Studio'));
     inner.appendChild(headingWrapper);
 
-    inner.appendChild(el('img', {
+    const studioPhotoLink = el('a', {
+      class: 'lightbox-trigger',
+      href: d.studio.photo,
+      'aria-label': 'View full size studio photo'
+    });
+    studioPhotoLink.appendChild(el('img', {
       class: 'studio-photo',
       src: d.studio.photo,
       alt: d.studio.photoAlt
     }));
+    inner.appendChild(studioPhotoLink);
 
     const specsDiv = el('div', { class: 'studio-specs' });
     d.studio.specs.forEach(spec => {
@@ -364,6 +392,28 @@
   // ══════════════════════════════════════════════════════════
   // INTERACTIONS
   // ══════════════════════════════════════════════════════════
+
+  // ── Lightbox ─────────────────────────────────────────────
+  (function initLightbox() {
+    const overlay = document.createElement('div');
+    overlay.id = 'lightbox-overlay';
+    overlay.innerHTML = '<img id="lightbox-img" src="" alt=""><button id="lightbox-close" aria-label="Close">&times;</button>';
+    document.body.appendChild(overlay);
+
+    const lbImg = document.getElementById('lightbox-img');
+    const close = () => { overlay.classList.remove('open'); lbImg.src = ''; };
+    document.getElementById('lightbox-close').addEventListener('click', close);
+    overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+
+    document.addEventListener('click', e => {
+      const trigger = e.target.closest('.lightbox-trigger');
+      if (!trigger) return;
+      e.preventDefault();
+      lbImg.src = trigger.href;
+      overlay.classList.add('open');
+    });
+  })();
 
   // Nav scroll shadow
   const nav = document.getElementById('main-nav');
