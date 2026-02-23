@@ -116,6 +116,7 @@ nav {
 
 /* ── SECTIONS — full viewport height ────────────────────── */
 section {
+  scroll-margin-top: var(--nav-h);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -709,10 +710,7 @@ footer {
   letter-spacing: 0.02em !important;
 }
 
-/* Library sub-headings - keep spaced uppercase like H2 */
-.library-item h3 {
-  letter-spacing: 0.4em;
-}
+/* Library sub-headings */
 
 /* ── CHARITY LOGOS — single strip image ─────────────────── */
 .footer-charities {
