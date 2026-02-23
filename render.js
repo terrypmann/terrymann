@@ -247,10 +247,9 @@
     d.libraries.forEach(item => {
       const div = el('div', { class: 'library-item' });
       div.appendChild(el('h3', {}, item.heading));
-      div.appendChild(el('p', {}, item.desc));
-      const contact = el('p', {});
-      contact.innerHTML = `Contact <a href="mailto:${d.contact.email}">${d.contact.email}</a> for further details.`;
-      div.appendChild(contact);
+      const descP = el('p', {});
+      descP.innerHTML = `${item.desc} Contact <a href="mailto:${d.contact.email}">${d.contact.email}</a> for further details.`;
+      div.appendChild(descP);
       if (item.embed) div.appendChild(el('div', { class: 'library-embed', html: item.embed }));
       grid.appendChild(div);
     });

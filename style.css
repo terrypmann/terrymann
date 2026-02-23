@@ -380,7 +380,7 @@ section:nth-of-type(even) {
   gap: 52px calc(var(--gap) * 2.5);
 }
 
-.library-item { text-align: center; }
+.library-item { text-align: left; }
 
 .library-item h3 {
   font-family: 'DM Serif Display', serif;
@@ -556,13 +556,12 @@ footer {
   justify-content: center;
   margin: 0 auto 32px;
   width: 100%;
-  padding: 0 2%;
 }
 
 .footer-charities img {
-  width: 100%;
-  max-width: 1400px;
-  height: auto;
+  height: 120px;
+  width: auto;
+  max-width: 100%;
   filter: brightness(0) invert(1);
   opacity: 0.85;
 }
