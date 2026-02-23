@@ -7,8 +7,8 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --cream-a:    #ece8e5;
-  --cream-b:    #f4f1ea;
+  --cream-a:    #f4f1ea;
+  --cream-b:    #f7f5f0;
   --text:       #1a1a1a;
   --subtext:    #555555;
   --credit:     #888888;
@@ -108,7 +108,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 80px 0 60px;
+  padding: 100px 0 80px;
   scroll-margin-top: 0;
 }
 
@@ -133,7 +133,7 @@ section:nth-of-type(even) { background: var(--cream-b); }
   text-transform: uppercase;
   color: var(--text);
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 60px;
 }
 
 /* H3 — work item titles: Oswald 400, ~15px */
@@ -141,7 +141,7 @@ section:nth-of-type(even) { background: var(--cream-b); }
   font-size: 22px;
   font-weight: 400;
   letter-spacing: 0.02em;
-  margin: 12px 0 6px;
+  margin: 16px 0 8px;
   color: var(--text);
 }
 
@@ -234,12 +234,13 @@ section:nth-of-type(even) { background: var(--cream-b); }
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #d8d4cf;
 }
 
 .video-facade img {
   width: 100%; height: 100%;
   object-fit: cover;
-  opacity: 0.88;
+  opacity: 1;
   transition: opacity 0.2s;
 }
 
@@ -290,7 +291,7 @@ section:nth-of-type(even) { background: var(--cream-b); }
 .work-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--gap) calc(var(--gap) * 1.2);
+  gap: calc(var(--gap) * 2.5) calc(var(--gap) * 1.2);
 }
 
 .work-item .video-wrapper,
@@ -326,9 +327,9 @@ section:nth-of-type(even) { background: var(--cream-b); }
 
 .release-meta {
   font-size: 17px;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--subtext);
-  line-height: 1.35;
+  line-height: 1.5;
   margin-bottom: 12px;
 }
 
@@ -415,7 +416,7 @@ section:nth-of-type(even) { background: var(--cream-b); }
 }
 
 .testimonial-photo {
-  width: 68px; height: 68px;
+  width: 96px; height: 96px;
   border-radius: 3px;
   object-fit: cover;
   flex-shrink: 0;
@@ -543,7 +544,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-  section { min-height: auto; padding: 64px 0 48px; }
+  section { min-height: auto; padding: 72px 0 56px; }
 
   nav { justify-content: space-between; padding: 0 16px; }
 
