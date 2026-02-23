@@ -375,8 +375,7 @@
     const footer = document.getElementById('site-footer');
 
     footer.appendChild(el('a', { href: '#top', class: 'footer-back-to-top' }, '🔝'));
-    footer.appendChild(el('p', { class: 'footer-acknowledgement' }, d.footer.acknowledgement1));
-    footer.appendChild(el('p', { class: 'footer-acknowledgement' }, d.footer.acknowledgement2));
+    if (d.footer.acknowledgement1) footer.appendChild(el('p', { class: 'footer-acknowledgement' }, d.footer.acknowledgement1));
     footer.appendChild(el('p', { class: 'footer-charities-note' }, d.footer.charitiesNote));
 
     const logos = el('div', { class: 'footer-charities' });

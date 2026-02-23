@@ -824,8 +824,7 @@ embed: `<iframe width="100%" height="450" scrolling="no" frameborder="no" allow=
   // FOOTER
   // ----------------------------------------------------------
   footer: {
-    acknowledgement1: "I acknowledge the Traditional Owners of the land where I work and live. I pay my respects to Elders past, present and emerging.",
-    acknowledgement2: "I celebrate the stories, culture and traditions of Aboriginal and Torres Strait Islander Elders of all communities who also work and live on this land.",
+    acknowledgement1: "I acknowledge the Traditional Owners of the land where I work and live. I pay my respects to Elders past, present and emerging. I celebrate the stories, culture and traditions of Aboriginal and Torres Strait Islander Elders of all communities who also work and live on this land.",
     charitiesNote: "A portion of the profits from my business are donated to the following charities each month:",
     charitiesImage: "images/charities.png"
   }
