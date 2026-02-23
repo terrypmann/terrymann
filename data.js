@@ -400,36 +400,36 @@ const SITE_DATA = {
     {
       title: "Netflix: Never Have I Ever",
       desc: "'Orlean – Faster' featured in series 2 of Netflix's coming of age dramedy, Never Have I Ever.",
-      credit: "Record Label: Hotel Motel"
+      credit: "Record Label: Hotel Motel",
       youtubeId: "DjXGijc26I8"
     },
     {
       title: "HBO: The Sex Lives of College Girls",
       desc: "'Orlean – Horizons' used in S01E01 of Mindy Kaling's coming of age comedy, The Sex Lives of College Girls.",
-      credit: "Record Label: Hotel Motel"
+      credit: "Record Label: Hotel Motel",
       youtubeId: "NU2S5GrDOHE" 
     },
     {
       title: "HBO: Search Party",
       desc: "3 x Orlean songs used in series 4 and 5 of HBO Max's dark comedy thriller, Search Party.",
-      credit: "Record Label: Hotel Motel"
+      credit: "Record Label: Hotel Motel",
       youtubeId: "Juh-dDhIdEI"
     },
     {
       title: "Showtime: The L Word",
       desc: "'Founder & CEO – Do You Dare (feat. Belle Doron)' featured in S03E09 of Showtime's The L Word: Generation Q.",
-      credit: "Record Label: Field Supply"
+      credit: "Record Label: Field Supply",
       youtubeId: "8bUIFQ4SFEI"
     },
     {
       title: "BBC: Waterloo Road",
       desc: "'Founder & CEO – Golden' featured in S13E05 of BBC's long running drama series Waterloo Road.",
-      credit: "Record Label: Field Supply"
+      credit: "Record Label: Field Supply",
       youtubeId: "qwwFyKLj2QI"
     },
     {
       title: "Bondi Rescue",
-      desc: "'Coach Bombay – Beamer' featured in Channel 10/Nat Geo's Bondi Rescue."
+      desc: "'Coach Bombay – Beamer' featured in Channel 10/Nat Geo's Bondi Rescue.",
       youtubeId: "aOdwq9zwHuE"
     },
     {
@@ -448,7 +448,7 @@ const SITE_DATA = {
     },
     {
       title: "Winners & Losers",
-      desc: "'Coach Bombay – Cool Thing (feat. Elle Young)' featured in Channel 7's Winners & Losers."
+      desc: "'Coach Bombay – Cool Thing (feat. Elle Young)' featured in Channel 7's Winners & Losers.",
       youtubeId: "MD_Oy_bhveA"
     },
     {
@@ -460,7 +460,7 @@ const SITE_DATA = {
     },
     {
       title: "Amateur Hour",
-      desc: "Skit and music, co-written with Laura Imbruglia for her web-series Amateur Hour, featuring Tim Rogers and Ella Hooper."
+      desc: "Skit and music, co-written with Laura Imbruglia for her web-series Amateur Hour, featuring Tim Rogers and Ella Hooper.",
       youtubeId: "vEQHOUJ_J6I"
     },
     {
