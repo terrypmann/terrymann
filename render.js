@@ -380,9 +380,12 @@
     if (d.footer.acknowledgement1) footer.appendChild(el('p', { class: 'footer-acknowledgement' }, d.footer.acknowledgement1));
     footer.appendChild(el('p', { class: 'footer-charities-note' }, d.footer.charitiesNote));
 
-    const logos = el('div', { class: 'footer-charities' });
-    logos.appendChild(el('img', { src: 'images/charities.png', alt: 'ASRC, Australian Conservation Foundation, Australian Red Cross, Lifeline, NAAJA, Oxfam' }));
-    footer.appendChild(logos);
+    const charitiesImg = el('img', {
+      src: 'images/charities.png',
+      alt: 'ASRC, Australian Conservation Foundation, Australian Red Cross, Lifeline, NAAJA, Oxfam',
+      class: 'footer-charities-img'
+    });
+    footer.appendChild(charitiesImg);
 
     const copy = el('p', { class: 'footer-copy' });
     copy.innerHTML = `&copy; ${new Date().getFullYear()} Terry Mann. All rights reserved.`;

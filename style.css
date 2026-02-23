@@ -551,17 +551,14 @@ footer {
   text-align: center;
 }
 
-.footer-charities {
-  margin: 0 -6% 32px;
-}
-
-.footer-charities img {
-  width: auto;
-  height: auto;
-  max-width: none;
+.footer-charities-img {
   display: block;
+  width: auto !important;
+  max-width: none !important;
+  height: auto;
   filter: brightness(0) invert(1);
   opacity: 0.85;
+  margin: 0 auto 32px;
 }
 
 .footer-copy {
