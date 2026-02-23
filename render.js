@@ -378,12 +378,6 @@
   (function renderFooter() {
     const footer = document.getElementById('site-footer');
 
-    footer.appendChild(el('a', { href: '#top', class: 'footer-back-to-top' }, '🔝'));
-    if (d.footer.logoImage) {
-      const logoWrap = el('div', { class: 'footer-logo-wrap' });
-      logoWrap.appendChild(el('img', { src: d.footer.logoImage, alt: 'Terry Mann - Composer', class: 'footer-logo-img' }));
-      footer.appendChild(logoWrap);
-    }
     if (d.footer.acknowledgement1) footer.appendChild(el('p', { class: 'footer-acknowledgement' }, d.footer.acknowledgement1));
     footer.appendChild(el('p', { class: 'footer-charities-note' }, d.footer.charitiesNote));
 
