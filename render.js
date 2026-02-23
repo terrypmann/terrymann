@@ -60,10 +60,15 @@
       tabindex: '0',
       'aria-label': label || 'Play video'
     });
-    facade.appendChild(el('img', {
+    const thumbImg = el('img', {
       src: `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`,
       alt: label || 'Video thumbnail'
-    }));
+    });
+    thumbImg.onerror = function() {
+      this.onerror = null;
+      this.src = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
+    };
+    facade.appendChild(thumbImg);
     facade.appendChild(el('div', { class: 'play-btn' }));
     wrapper.appendChild(facade);
     return wrapper;

@@ -732,13 +732,13 @@ embed: `<iframe width="100%" height="450" scrolling="no" frameborder="no" allow=
       quote: "Simply put, there's no safer hands when it comes to brief interpretation, collaboration & execution. Terry is a true creative partner who has (quite literally) elevated every brief we've ever had the pleasure of working on together. Could not recommend enough.",
       name: "Jess Evernden", firstName: "Jess",
       title: "Senior Producer, Freelance",
-      photo: "images/testimonials/jess.png"
+      photo: "images/testimonials/jess.jpg"
     },
     {
       quote: "Terry's an absolute talent. An amazing composer, musician & songwriter, all synced up by a hugely talented creative brain that manages to interpret even the most abstract brief into banging melodic perfection. Cannot recommend Terry enough.",
       name: "Giles Watson", firstName: "Giles",
       title: "Deputy Executive Creative Director, DDB",
-      photo: "images/testimonials/giles.png"
+      photo: "images/testimonials/giles.jpg"
     },
     {
       quote: "It goes without saying that the Mann is a musical master. I knew where I wanted the idea to go, and within 24 hours, Terry turned my scratchings on a page into a lyrical symphony.",
@@ -756,7 +756,7 @@ embed: `<iframe width="100%" height="450" scrolling="no" frameborder="no" allow=
       quote: "It's one thing to be able to compose music. It's another to be able to do it from an often rambling brief from advertising creatives... to an often short deadline. Terry has this rare skill. That's why he's my go-to.",
       name: "Ben Couzens", firstName: "Ben",
       title: "Co-founder & Executive Creative Tinker, Thinkerbell",
-      photo: "images/testimonials/cuz.png"
+      photo: "images/testimonials/ben.jpg"
     },
     {
       quote: "Terry is a solid pair of hands who I wouldn't think twice about bringing onto a project. He nails briefs, communicates clearly and most importantly has a unique creative edge to his compositions. Get him involved, you won't regret it!",
@@ -798,13 +798,13 @@ embed: `<iframe width="100%" height="450" scrolling="no" frameborder="no" allow=
       quote: "They call him 'The Hitmann'. Or at least, I do. A musical genius with a very particular set of skills. I cannot recommend him highly enough – an eighth octave high C comes close. If you want your brief brilliantly executed, you must hire The Hitmann.",
       name: "Chris Ellis", firstName: "Chris",
       title: "Executive Creative Director, Fenton Stephens",
-      photo: "images/testimonials/chris.png"
+      photo: "images/testimonials/chris.jpg"
     },
     {
       quote: "Terry brought the perfect blend of warmth and charm to our campaign with a score that truly elevated the story. His professionalism and creativity made the collaboration seamless and enjoyable from start to finish.",
       name: "Izzy Robertson", firstName: "Izzy",
       title: "Producer, Droga5",
-      photo: "images/testimonials/izzy.png"
+      photo: "images/testimonials/izzy.jpg"
     }
   ],
 
