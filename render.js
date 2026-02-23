@@ -96,7 +96,11 @@
 
     if (item.desc)    div.appendChild(el('p', { class: 'work-item-desc' }, item.desc));
     if (item.credits) div.appendChild(el('p', { class: 'work-item-credits', html: item.credits }));
-    if (item.credit)  div.appendChild(el('p', { class: 'work-credit', html: item.credit }));
+    if (item.credit) {
+      const creditWrap = el('div', { class: 'quote-style' });
+      creditWrap.appendChild(el('p', { class: 'work-credit', html: item.credit }));
+      div.appendChild(creditWrap);
+    }
 
     return div;
   }
@@ -277,7 +281,7 @@
       const content = el('div', { class: 'testimonial-content' });
       content.appendChild(el('p', { class: 'testimonial-body' }, item.quote));
       const attr = el('div', { class: 'testimonial-attribution' });
-      attr.appendChild(el('strong', {}, item.name));
+      attr.appendChild(el('strong', {}, item.firstName || item.name));
       attr.appendChild(el('span', {}, item.title));
       content.appendChild(attr);
       card.appendChild(content);
@@ -307,10 +311,17 @@
     line2.innerHTML = `To stay in the loop, you can find me on ${socialLinks}.`;
     inner.appendChild(line2);
 
-    if (d.contact.image) {
-      const imgWrap = el('div', { class: 'contact-image' });
-      imgWrap.appendChild(el('img', { src: d.contact.image, alt: 'Contact' }));
-      inner.appendChild(imgWrap);
+    if (d.contact.video) {
+      const videoWrap = el('div', { class: 'contact-image' });
+      const vid = document.createElement('video');
+      vid.src = d.contact.video;
+      vid.autoplay = true;
+      vid.muted = true;
+      vid.loop = true;
+      vid.playsInline = true;
+      vid.setAttribute('playsinline', '');
+      videoWrap.appendChild(vid);
+      inner.appendChild(videoWrap);
     }
 
     main.appendChild(sec);
@@ -329,9 +340,7 @@
     footer.appendChild(el('p', { class: 'footer-charities-note' }, d.footer.charitiesNote));
 
     const logos = el('div', { class: 'footer-charities' });
-    d.footer.charities.forEach(c => {
-      logos.appendChild(el('img', { src: c.src, alt: c.alt }));
-    });
+    logos.appendChild(el('img', { src: 'images/charities.png', alt: 'ASRC, Australian Conservation Foundation, Australian Red Cross, Lifeline, NAAJA, Oxfam' }));
     footer.appendChild(logos);
 
     const copy = el('p', { class: 'footer-copy' });
