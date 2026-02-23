@@ -37,7 +37,7 @@ const SITE_DATA = {
     paragraphs: [
       `🎵 Terry Mann is a composer based in Melbourne, Australia, with a focus on music for advertising.`,
       `His compositions have featured in 50+ ads, 50+ TV eps, and his personal releases have been synced in global Netflix, HBO, BBC, ABC, and Showtime series'.`,
-      `Terry is a member of the <a href="https://agsc.org.au/" target="_blank" rel="noopener">Australian Guild Of Screen Composers</a>, and the founder of <a href="https://www.melbournesocialchoir.com" target="_blank" rel="noopener">Melbourne Social Choir</a>. His work has been recognised by The APRA Screen Music Awards, The ARIA Music Awards and The Logies.`,
+      `Terry is a member of the <a href="https://agsc.org.au/directory-of-members/#!biz/id/6103636260fafa64983c4a13" target="_blank" rel="noopener">Australian Guild Of Screen Composers</a>, and the founder of <a href="https://www.melbournesocialchoir.com" target="_blank" rel="noopener">Melbourne Social Choir</a>. His work has been recognised by The APRA Screen Music Awards, The ARIA Music Awards and The Logies.`,
       `For all enquiries, get in touch at <a href="mailto:hi@terry-mann.com">hi@terry-mann.com</a>`
     ]
   },
