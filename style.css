@@ -714,11 +714,6 @@ footer {
   .bio-text   { grid-column: 1; grid-row: 2; }
   .bio-reel   { grid-column: 1; grid-row: 3; }
 
-  #studio .section-inner   { grid-template-columns: 1fr; }
-  .studio-heading-wrapper,
-  .studio-photo,
-  .studio-specs { grid-column: 1; }
-
   .libraries-grid { grid-template-columns: 1fr; }
   .releases-grid  { grid-template-columns: 1fr; }
 

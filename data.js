@@ -676,6 +676,16 @@ const SITE_DATA = {
   studio: {
     photo: "images/studio.jpg",
     photoAlt: "Terry Mann's home studio",
+    videos: [
+      {
+        youtubeId: "Ru4od9Emy-g",
+        desc: "Placeholder text — fill in later."
+      },
+      {
+        youtubeId: "_hmOcBuk4YE",
+        desc: "Placeholder text — fill in later."
+      }
+    ],
     specs: [
       {
         heading: "Interfaces",

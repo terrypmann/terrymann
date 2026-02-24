@@ -81,12 +81,15 @@
       if (this.naturalWidth <= 120) tryNextThumb();
     };
     thumbImg.onerror = function() { tryNextThumb(); };
-    // If all sizes exhausted, show a dark placeholder so it's not just blank
-    const origTryNext = tryNextThumb;
     function tryNextThumb() {
       if (thumbIdx >= thumbUrls.length) {
+        // All sizes failed — video is likely private or deleted
         thumbImg.style.display = 'none';
         facade.style.background = '#1a1a1a';
+        const msg = document.createElement('p');
+        msg.style.cssText = 'color:rgba(255,255,255,0.4);font-size:12px;text-align:center;padding:8px;position:absolute;bottom:8px;left:0;right:0;';
+        msg.textContent = 'Video unavailable';
+        facade.appendChild(msg);
         return;
       }
       thumbImg.src = thumbUrls[thumbIdx];
@@ -137,6 +140,20 @@
     }
 
     return div;
+  }
+
+
+  // Simple 16:9 YouTube iframe embed (no click-to-play facade)
+  function youtubeEmbed(youtubeId) {
+    const wrap = el('div', { class: 'video-wrapper' });
+    const iframe = el('iframe', {
+      src: `https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1`,
+      frameborder: '0',
+      allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+      allowfullscreen: ''
+    });
+    wrap.appendChild(iframe);
+    return wrap;
   }
 
 
@@ -292,31 +309,35 @@
   (function renderStudio() {
     const { sec, inner } = section('studio');
 
-    // Heading spans full width above the two-col layout
-    const headingWrapper = el('div', { class: 'studio-heading-wrapper' });
-    headingWrapper.appendChild(sectionHeading('Home Studio'));
-    inner.appendChild(headingWrapper);
+    inner.appendChild(sectionHeading('Home Studio'));
 
-    const studioPhotoLink = el('a', {
+    const grid = el('div', { class: 'work-grid studio-grid' });
+
+    // Col 1: photo
+    const photoCol = el('div', { class: 'studio-col' });
+    const photoLink = el('a', {
       class: 'lightbox-trigger',
       href: d.studio.photo,
       'aria-label': 'View full size studio photo'
     });
-    studioPhotoLink.appendChild(el('img', {
+    photoLink.appendChild(el('img', {
       class: 'studio-photo',
       src: d.studio.photo,
       alt: d.studio.photoAlt
     }));
-    inner.appendChild(studioPhotoLink);
+    photoCol.appendChild(photoLink);
+    photoCol.appendChild(el('p', { class: 'work-item-desc' }, 'Placeholder text — fill in later.'));
+    grid.appendChild(photoCol);
 
-    const specsDiv = el('div', { class: 'studio-specs' });
-    d.studio.specs.forEach(spec => {
-      const p = el('p', {});
-      p.innerHTML = `<strong>${spec.heading}:</strong> ${spec.text}`;
-      specsDiv.appendChild(p);
+    // Cols 2 & 3: videos
+    (d.studio.videos || []).forEach(vid => {
+      const col = el('div', { class: 'studio-col' });
+      col.appendChild(youtubeEmbed(vid.youtubeId));
+      if (vid.desc) col.appendChild(el('p', { class: 'work-item-desc' }, vid.desc));
+      grid.appendChild(col);
     });
-    inner.appendChild(specsDiv);
 
+    inner.appendChild(grid);
     main.appendChild(sec);
   })();
 
