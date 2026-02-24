@@ -676,7 +676,12 @@ const SITE_DATA = {
   studio: {
     photo: "images/studio.jpg",
     photoAlt: "Terry Mann's home studio",
-    videos: [
+    items: [
+      {
+        type: "image",
+        image: "images/studio.jpg",
+        desc: "Placeholder text — fill in later."
+      },
       {
         youtubeId: "Ru4od9Emy-g",
         desc: "Placeholder text — fill in later."

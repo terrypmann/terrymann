@@ -143,19 +143,6 @@
   }
 
 
-  // Simple 16:9 YouTube iframe embed (no click-to-play facade)
-  function youtubeEmbed(youtubeId) {
-    const wrap = el('div', { class: 'video-wrapper' });
-    const iframe = el('iframe', {
-      src: `https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1`,
-      frameborder: '0',
-      allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
-      allowfullscreen: ''
-    });
-    wrap.appendChild(iframe);
-    return wrap;
-  }
-
 
   // ══════════════════════════════════════════════════════════
   // SECTION 1: BIO & REEL
@@ -308,35 +295,12 @@
   // ══════════════════════════════════════════════════════════
   (function renderStudio() {
     const { sec, inner } = section('studio');
-
     inner.appendChild(sectionHeading('Home Studio'));
-
-    const grid = el('div', { class: 'work-grid studio-grid' });
-
-    // Col 1: photo
-    const photoCol = el('div', { class: 'studio-col' });
-    const photoLink = el('a', {
-      class: 'lightbox-trigger',
-      href: d.studio.photo,
-      'aria-label': 'View full size studio photo'
+    const grid = el('div', { class: 'work-grid' });
+    (d.studio.items || []).forEach(item => {
+      // Use workItem but suppress the title (studio items have no title field)
+      grid.appendChild(workItem(item));
     });
-    photoLink.appendChild(el('img', {
-      class: 'studio-photo',
-      src: d.studio.photo,
-      alt: d.studio.photoAlt
-    }));
-    photoCol.appendChild(photoLink);
-    photoCol.appendChild(el('p', { class: 'work-item-desc' }, 'Placeholder text — fill in later.'));
-    grid.appendChild(photoCol);
-
-    // Cols 2 & 3: videos
-    (d.studio.videos || []).forEach(vid => {
-      const col = el('div', { class: 'studio-col' });
-      col.appendChild(youtubeEmbed(vid.youtubeId));
-      if (vid.desc) col.appendChild(el('p', { class: 'work-item-desc' }, vid.desc));
-      grid.appendChild(col);
-    });
-
     inner.appendChild(grid);
     main.appendChild(sec);
   })();
