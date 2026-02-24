@@ -137,9 +137,6 @@
   (function renderBio() {
     const { sec, inner } = section('bioandreel');
 
-    const bioH1 = el('h1', { class: 'bio-h1' }, 'Terry Mann, Composer');
-    inner.appendChild(bioH1);
-
     const bioPhotoLink = el('a', {
       class: 'lightbox-trigger',
       href: d.bio.photo,
@@ -450,42 +447,14 @@
   // Iframes capture the scroll wheel when hovered, trapping the user.
   // Fix: disable pointer-events on mouseover so scroll passes through to page.
   // Re-enable on click so the user can still interact with the embed.
-  (function fixIframeScroll() {
-    // stopPropagation can't stop scroll once the browser focuses an iframe's
-    // browsing context. The only reliable fix is a transparent overlay that
-    // physically sits over the iframe and intercepts scroll/touch.
-    // On click: overlay hides itself for 600ms so the click lands on the iframe.
-    // On mouseleave: overlay reappears immediately, blocking scroll again.
-
-    function addOverlay(wrapper) {
-      if (wrapper.querySelector('.iframe-scroll-guard')) return;
-      const guard = document.createElement('div');
-      guard.className = 'iframe-scroll-guard';
-      wrapper.style.position = wrapper.style.position || 'relative';
-      wrapper.appendChild(guard);
-
-      guard.addEventListener('pointerdown', e => {
-        guard.style.display = 'none';
-        const el = document.elementFromPoint(e.clientX, e.clientY);
-        if (el && el !== guard) {
-          el.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, clientX: e.clientX, clientY: e.clientY }));
-        }
-        setTimeout(() => { guard.style.display = ''; }, 600);
-      });
-
-      wrapper.addEventListener('mouseleave', () => { guard.style.display = ''; });
-    }
-
-    const SELECTORS = '.video-wrapper, .library-embed, .release-embed';
-    document.querySelectorAll(SELECTORS).forEach(addOverlay);
-    new MutationObserver(mutations => {
-      mutations.forEach(m => m.addedNodes.forEach(node => {
-        if (!node.querySelectorAll) return;
-        if (node.matches && node.matches(SELECTORS)) addOverlay(node);
-        node.querySelectorAll(SELECTORS).forEach(addOverlay);
-      }));
-    }).observe(document.body, { childList: true, subtree: true });
-  })();
+  // Clean #top from URL when nav logo clicked
+  document.querySelectorAll('a[href="#top"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.replaceState(null, '', window.location.pathname);
+    });
+  });
 
   // Nav scroll shadow
   const nav = document.getElementById('main-nav');
