@@ -81,6 +81,17 @@
       if (this.naturalWidth <= 120) tryNextThumb();
     };
     thumbImg.onerror = function() { tryNextThumb(); };
+    // If all sizes exhausted, show a dark placeholder so it's not just blank
+    const origTryNext = tryNextThumb;
+    function tryNextThumb() {
+      if (thumbIdx >= thumbUrls.length) {
+        thumbImg.style.display = 'none';
+        facade.style.background = '#1a1a1a';
+        return;
+      }
+      thumbImg.src = thumbUrls[thumbIdx];
+      thumbIdx++;
+    }
     tryNextThumb();
     facade.appendChild(thumbImg);
     facade.appendChild(el('div', { class: 'play-btn' }));
@@ -380,12 +391,18 @@
     if (d.footer.acknowledgement1) footer.appendChild(el('p', { class: 'footer-acknowledgement' }, d.footer.acknowledgement1));
     footer.appendChild(el('p', { class: 'footer-charities-note' }, d.footer.charitiesNote));
 
+    const charitiesPicture = document.createElement('picture');
+    const mobileSource = document.createElement('source');
+    mobileSource.media = '(max-width: 768px)';
+    mobileSource.srcset = 'images/charities-mobile.png';
     const charitiesImg = el('img', {
       src: 'images/charities.png',
       alt: 'ASRC, Australian Conservation Foundation, Australian Red Cross, Lifeline, NAAJA, Oxfam',
       class: 'footer-charities-img'
     });
-    footer.appendChild(charitiesImg);
+    charitiesPicture.appendChild(mobileSource);
+    charitiesPicture.appendChild(charitiesImg);
+    footer.appendChild(charitiesPicture);
 
     const copy = el('p', { class: 'footer-copy' });
     copy.innerHTML = `&copy; ${new Date().getFullYear()} Terry Mann. All rights reserved.`;
