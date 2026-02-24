@@ -451,18 +451,38 @@
   // Fix: disable pointer-events on mouseover so scroll passes through to page.
   // Re-enable on click so the user can still interact with the embed.
   (function fixIframeScroll() {
-    // Block wheel events on iframe wrappers so page scrolling always works.
-    // Clicks and all other interaction with the embedded players are unaffected.
-    function addWheelBlock(el) {
-      el.addEventListener('wheel',     e => e.stopPropagation(), { passive: false });
-      el.addEventListener('touchmove',  e => e.stopPropagation(), { passive: false });
+    // stopPropagation can't stop scroll once the browser focuses an iframe's
+    // browsing context. The only reliable fix is a transparent overlay that
+    // physically sits over the iframe and intercepts scroll/touch.
+    // On click: overlay hides itself for 600ms so the click lands on the iframe.
+    // On mouseleave: overlay reappears immediately, blocking scroll again.
+
+    function addOverlay(wrapper) {
+      if (wrapper.querySelector('.iframe-scroll-guard')) return;
+      const guard = document.createElement('div');
+      guard.className = 'iframe-scroll-guard';
+      wrapper.style.position = wrapper.style.position || 'relative';
+      wrapper.appendChild(guard);
+
+      guard.addEventListener('pointerdown', e => {
+        guard.style.display = 'none';
+        const el = document.elementFromPoint(e.clientX, e.clientY);
+        if (el && el !== guard) {
+          el.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, clientX: e.clientX, clientY: e.clientY }));
+        }
+        setTimeout(() => { guard.style.display = ''; }, 600);
+      });
+
+      wrapper.addEventListener('mouseleave', () => { guard.style.display = ''; });
     }
-    document.querySelectorAll('.video-wrapper, .library-embed, .release-embed').forEach(addWheelBlock);
-    // Also catch any wrappers added later (e.g. click-to-play iframes)
+
+    const SELECTORS = '.video-wrapper, .library-embed, .release-embed';
+    document.querySelectorAll(SELECTORS).forEach(addOverlay);
     new MutationObserver(mutations => {
       mutations.forEach(m => m.addedNodes.forEach(node => {
         if (!node.querySelectorAll) return;
-        node.querySelectorAll('.video-wrapper, .library-embed, .release-embed').forEach(addWheelBlock);
+        if (node.matches && node.matches(SELECTORS)) addOverlay(node);
+        node.querySelectorAll(SELECTORS).forEach(addOverlay);
       }));
     }).observe(document.body, { childList: true, subtree: true });
   })();
