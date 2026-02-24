@@ -115,7 +115,13 @@
       a.appendChild(el('img', { src: item.image, alt: item.title }));
       div.appendChild(a);
     } else if (item.type === 'image') {
-      div.appendChild(el('img', { class: 'work-item-image', src: item.image, alt: item.title }));
+      const imgWrap = el('div', { class: 'video-wrapper' });
+      const imgLink = el('a', { class: 'lightbox-trigger', href: item.image, 'aria-label': 'View full size image' });
+      const imgEl = el('img', { src: item.image, alt: item.title, style: 'position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;' });
+      imgLink.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;display:block;';
+      imgLink.appendChild(imgEl);
+      imgWrap.appendChild(imgLink);
+      div.appendChild(imgWrap);
     }
 
     // Title
@@ -467,15 +473,29 @@
   // Mobile hamburger
   const toggle = document.querySelector('.nav-toggle');
   const navLinks = document.getElementById('nav-links');
-  toggle.addEventListener('click', () => {
+
+  function closeMenu() {
+    navLinks.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+  }
+
+  toggle.addEventListener('click', e => {
+    e.stopPropagation();
     const open = navLinks.classList.toggle('open');
     toggle.setAttribute('aria-expanded', open);
   });
+
+  // Close on nav link click
   navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      toggle.setAttribute('aria-expanded', false);
-    });
+    a.addEventListener('click', closeMenu);
+  });
+
+  // Close on scroll
+  window.addEventListener('scroll', closeMenu, { passive: true });
+
+  // Close on tap/click outside the nav
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#main-nav')) closeMenu();
   });
 
   // Video click-to-play
