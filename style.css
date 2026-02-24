@@ -824,3 +824,16 @@ footer {
   filter: brightness(0) invert(1);
   opacity: 0.9;
 }
+
+/* ── BIO H1 ─────────────────────────────────────────────── */
+.bio-h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 72px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+  color: var(--s-text);
+  text-align: center;
+  grid-column: 1 / -1;
+  margin-bottom: 56px;
+}

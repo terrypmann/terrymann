@@ -137,6 +137,9 @@
   (function renderBio() {
     const { sec, inner } = section('bioandreel');
 
+    const bioH1 = el('h1', { class: 'bio-h1' }, 'Terry Mann, Composer');
+    inner.appendChild(bioH1);
+
     const bioPhotoLink = el('a', {
       class: 'lightbox-trigger',
       href: d.bio.photo,
