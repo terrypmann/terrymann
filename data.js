@@ -587,21 +587,21 @@ const SITE_DATA = {
       year: "2011 EP",
       meta: "Band: Ed Sharp-Paul, Terry Mann, Don Cameron, Matthew O'Brien, Brendan Ansell",
       guests: "Recorded by Jimi Wyatt, Ginger Studios",
-      embed: `<iframe style="border:0;width:100%;height:500px" src="https://bandcamp.com/EmbeddedPlayer/album=2910180549/size=large/bgcol=ffffff/linkcol=c47a2a/artwork=small/transparent=true/" seamless></iframe>`
+      embed: `<iframe style="border:0;width:100%;height:350px" src="https://bandcamp.com/EmbeddedPlayer/album=2910180549/size=large/bgcol=ffffff/linkcol=c47a2a/artwork=small/transparent=true/" seamless></iframe>`
     },
     {
       title: "Pretty Strangers – Pretty Strangers",
       year: "2010 EP",
       meta: "Band: Ed Sharp-Paul, Terry Mann, Don Cameron, Matthew O'Brien, Brendan Ansell",
       guests: "Recorded by Jimi Wyatt, Ginger Studios",
-      embed: `<iframe style="border:0;width:100%;height:500px;" src="https://bandcamp.com/EmbeddedPlayer/album=1363777368/size=large/bgcol=ffffff/linkcol=c47a2a/artwork=small/transparent=true/" seamless></iframe>`
+      embed: `<iframe style="border:0;width:100%;height:350px;" src="https://bandcamp.com/EmbeddedPlayer/album=1363777368/size=large/bgcol=ffffff/linkcol=c47a2a/artwork=small/transparent=true/" seamless></iframe>`
     },
     {
       title: "Just Desserts – Just Desserts",
       year: "2009 album",
       meta: "All vocals by Tahireh Thampi",
       guests: "Additional drums by Daniel Mizzi. Violin by Brendan Ansell",
-      embed: `<iframe style="border:0;width:100%;height:500x;" src="https://bandcamp.com/EmbeddedPlayer/album=560297903/size=large/bgcol=ffffff/linkcol=c47a2a/artwork=small/transparent=true/" seamless></iframe>`
+      embed: `<iframe style="border:0;width:100%;height:350px;" src="https://bandcamp.com/EmbeddedPlayer/album=560297903/size=large/bgcol=ffffff/linkcol=c47a2a/artwork=small/transparent=true/" seamless></iframe>`
     }
   ],
 
@@ -613,22 +613,22 @@ const SITE_DATA = {
     {
       heading: "Ad Tracks",
       desc: "Does your ad need a track that works? My ever-expanding library is designed for just that. These can be licensed as is or rescored to picture.",
-      embed: `<iframe width="100%" height="1000" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1729418949%3Fsecret_token%3Ds-xwY9cy8gxCp&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>`
+      embed: `<iframe width="100%" height="800" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1729418949%3Fsecret_token%3Ds-xwY9cy8gxCp&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>`
     },
     {
       heading: "Ad Scores",
       desc: "If your ad has a story to tell, my library of scores could be just the ticket. These can be licensed as is or rescored to picture.",
-      embed: `<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2095551307%3Fsecret_token%3Ds-xwY9cy8gxCp&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>`
+      embed: `<iframe width="100%" height="800" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2095551307%3Fsecret_token%3Ds-xwY9cy8gxCp&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>`
     },
     {
       heading: "Classical Reworks",
       desc: "Public domain pieces, rescored into ad-ready soundtracks, with a unique alternate version of each. Extended and cut down versions can be created as required.",
-      embed: `<iframe width="100%" height="1000" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1676852166%3Fsecret_token%3Ds-xwY9cy8gxCp&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>`
+      embed: `<iframe width="100%" height="800" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1676852166%3Fsecret_token%3Ds-xwY9cy8gxCp&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>`
     },
     {
       heading: "Instrumental Reworks",
       desc: "Instrumental remakes of famous songs. It's great practice and I learn a lot from the process. If you've licensed an existing song and need a cover, get in touch.",
-      embed: `<iframe width="100%" height="1000" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1698116940%3Fsecret_token%3Ds-xwY9cy8gxCp&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>`
+      embed: `<iframe width="100%" height="800" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1698116940%3Fsecret_token%3Ds-xwY9cy8gxCp&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>`
     }
   ],
 
