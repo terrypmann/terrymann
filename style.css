@@ -154,7 +154,7 @@ section:nth-of-type(even) {
 /* H2 — section headings: Oswald 300, ~16px, very spaced */
 .section-heading {
   font-family: 'DM Serif Display', serif;
-  font-size: 72px;
+  font-size: 58px;
   font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
@@ -381,7 +381,9 @@ section:nth-of-type(even) {
 .libraries-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 52px calc(var(--gap) * 2.5);
+  gap: 52px calc(var(--gap) * 4);
+  max-width: 75%;
+  margin: 0 auto;
 }
 
 .library-item { text-align: left; }
@@ -566,10 +568,11 @@ footer {
 }
 
 .footer-copy {
-  font-size: 18px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.28);
-  letter-spacing: 0.08em;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0;
   margin-top: 8px;
 }
 
