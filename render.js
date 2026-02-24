@@ -446,6 +446,37 @@
     sections.forEach(sec => observer.observe(sec));
   })();
 
+  // ── Iframe scroll trap fix ──────────────────────────────
+  // Iframes capture the scroll wheel when hovered, trapping the user.
+  // Fix: disable pointer-events on mouseover so scroll passes through to page.
+  // Re-enable on click so the user can still interact with the embed.
+  (function fixIframeScroll() {
+    let iframeTimer;
+    document.addEventListener('mouseover', e => {
+      const iframe = e.target.closest('iframe');
+      if (!iframe) return;
+      iframe.style.pointerEvents = 'none';
+      clearTimeout(iframeTimer);
+    });
+    document.addEventListener('click', e => {
+      const iframe = e.target.closest('iframe');
+      if (iframe) {
+        iframe.style.pointerEvents = 'auto';
+        // Re-disable after 2s of inactivity so scroll still works after clicking
+        clearTimeout(iframeTimer);
+        iframeTimer = setTimeout(() => { iframe.style.pointerEvents = 'none'; }, 2000);
+      }
+    });
+    // Re-enable all iframes when mouse leaves them
+    document.addEventListener('mouseout', e => {
+      const iframe = e.target.closest('iframe');
+      if (iframe) {
+        clearTimeout(iframeTimer);
+        iframe.style.pointerEvents = 'auto';
+      }
+    });
+  })();
+
   // Nav scroll shadow
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => {
