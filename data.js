@@ -585,14 +585,14 @@ const SITE_DATA = {
     {
       title: "Pretty Strangers – Holloway",
       year: "2011 EP",
-      meta: "Band: Ed Sharp-Paul, Terry Mann, Don Cameron, Matthew O'Brien, Brendan Ansell",
+      meta: "With Ed Sharp-Paul, Don Cameron, Matthew O'Brien and Brendan Ansell",
       guests: "Recorded by Jimi Wyatt, Ginger Studios",
       embed: `<iframe style="border:0;width:100%;height:350px" src="https://bandcamp.com/EmbeddedPlayer/album=2910180549/size=large/bgcol=ffffff/linkcol=c47a2a/artwork=small/transparent=true/" seamless></iframe>`
     },
     {
       title: "Pretty Strangers – Pretty Strangers",
       year: "2010 EP",
-      meta: "Band: Ed Sharp-Paul, Terry Mann, Don Cameron, Matthew O'Brien, Brendan Ansell",
+      meta: "With Ed Sharp-Paul, Don Cameron, Matthew O'Brien and Brendan Ansell",
       guests: "Recorded by Jimi Wyatt, Ginger Studios",
       embed: `<iframe style="border:0;width:100%;height:350px;" src="https://bandcamp.com/EmbeddedPlayer/album=1363777368/size=large/bgcol=ffffff/linkcol=c47a2a/artwork=small/transparent=true/" seamless></iframe>`
     },
