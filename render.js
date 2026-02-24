@@ -451,40 +451,20 @@
   // Fix: disable pointer-events on mouseover so scroll passes through to page.
   // Re-enable on click so the user can still interact with the embed.
   (function fixIframeScroll() {
-    // All iframes start non-interactive for scrolling purposes
-    // A click activates an iframe (allows scroll + interaction)
-    // Moving mouse out deactivates it again
-    document.querySelectorAll('iframe').forEach(iframe => {
-      iframe.style.pointerEvents = 'none';
-    });
-
-    // As new iframes may be injected (click-to-play), observe DOM changes
-    const observer = new MutationObserver(mutations => {
+    // Block wheel events on iframe wrappers so page scrolling always works.
+    // Clicks and all other interaction with the embedded players are unaffected.
+    function addWheelBlock(el) {
+      el.addEventListener('wheel',     e => e.stopPropagation(), { passive: false });
+      el.addEventListener('touchmove',  e => e.stopPropagation(), { passive: false });
+    }
+    document.querySelectorAll('.video-wrapper, .library-embed, .release-embed').forEach(addWheelBlock);
+    // Also catch any wrappers added later (e.g. click-to-play iframes)
+    new MutationObserver(mutations => {
       mutations.forEach(m => m.addedNodes.forEach(node => {
-        if (node.tagName === 'IFRAME') node.style.pointerEvents = 'none';
-        if (node.querySelectorAll) node.querySelectorAll('iframe').forEach(f => {
-          f.style.pointerEvents = 'none';
-        });
+        if (!node.querySelectorAll) return;
+        node.querySelectorAll('.video-wrapper, .library-embed, .release-embed').forEach(addWheelBlock);
       }));
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    // Click on the iframe wrapper activates it
-    document.addEventListener('click', e => {
-      const wrapper = e.target.closest('.video-wrapper, .library-embed, .release-embed');
-      if (!wrapper) return;
-      const iframe = wrapper.querySelector('iframe');
-      if (!iframe) return;
-      iframe.style.pointerEvents = 'auto';
-    }, true); // capture phase so click registers before pointer-events:none blocks it
-
-    // Mouse leaving the wrapper deactivates scroll
-    document.addEventListener('mouseleave', e => {
-      const wrapper = e.target.closest('.video-wrapper, .library-embed, .release-embed');
-      if (!wrapper) return;
-      const iframe = wrapper.querySelector('iframe');
-      if (iframe) iframe.style.pointerEvents = 'none';
-    }, true);
+    }).observe(document.body, { childList: true, subtree: true });
   })();
 
   // Nav scroll shadow
