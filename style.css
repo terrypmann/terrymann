@@ -423,16 +423,6 @@ section:nth-of-type(even) {
 
 
 /* ── STUDIO — image left, specs right ───────────────────── */
-#studio .section-inner {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: var(--gap) calc(var(--gap) * 1.8);
-  align-items: start;
-}
-
-.studio-heading-wrapper { grid-column: 1 / -1; }
-.studio-photo { grid-column: 1; width: 100%; display: block; }
-.studio-specs { grid-column: 2; }
 
 .studio-specs p {
   font-size: 17px;
