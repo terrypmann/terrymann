@@ -82,7 +82,7 @@ const SITE_DATA = {
       title: "Four'N Twenty",
       desc: "A reboot of the famous 'Oh What A Lovely Pie' jingle, starring Browny, Ben Simmons and Tayla Harris.",
       credit: "Agency: BWM Dentsu",
-      youtubeId: "Bx3Vz8F-m8"
+      youtubeId: "-Bx3Vz8F-m8"
     },
     {
       title: "Apple (Global)",
@@ -372,7 +372,7 @@ const SITE_DATA = {
       title: "Battle Cats (Japan)",
       desc: "Instrumental desert rock and thumping stadium house music for 'Battle Cats' anniversary teaser trailer – a mobile game that has just reached 100 million downloads.",
       credit: "Music Supervision: made by ikigai",
-      youtubeId: "AOnxQqI4qw"
+      youtubeId: "AOnxQqI4qwI"
     }
   ],
 
