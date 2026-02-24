@@ -680,53 +680,19 @@ const SITE_DATA = {
       {
         youtubeId: "e0vvhxAlFb8",
         title: "Panel Build",
-        desc: "Placeholder text — fill in later."
+        desc: "In 2025 I decided to take up a new hobby and learn how to build things. My first project was to make a stackable studio wall panel that achieved three goals: (i) absorption, (ii) diffusion, (iii) looking pretty. This timelapse shows the building of 1 panel (out of 30)."
       },
       {
         youtubeId: "Ru4od9Emy-g",
         title: "Studio Build",
-        desc: "Placeholder text — fill in later."
+        desc: "The next project was to build two custom rack towers (24RU each) to store my outboard gear. This timelapse shows me setting up the panels and towers, putting all the gear back in, and Andrew the electrician installing the ostentatious light I bought."
       },
       {
         youtubeId: "_hmOcBuk4YE",
         title: "Cabinet Build",
-        desc: "Placeholder text — fill in later."
+        desc: "Next up was to build the ‘Cabinet of Curiosities’, to house all the other bits and bobs like amp heads, drums and percussion. I didn’t want to stop the natural light coming in from the windows, so I left these with open backs. "
       }
     ],
-    specs: [
-      {
-        heading: "Interfaces",
-        text: "Universal Audio Apollo x16, Universal Audio Apollo x6"
-      },
-      {
-        heading: "Hardware",
-        text: "Rupert Neve Designs 5059 Summing Mixer, Rupert Neve Designs Portico II Master Bus Processor, Dangerous Convert-AD+, Neve 1073DPX Stereo Preamp & EQ, Empirical Labs EL8-X Distressor Stereo Pair, Roland RE-201 Space Echo, Neumann KH-150 studio monitors, JLM Audio Headphone Amp, Monogram controllers."
-      },
-      {
-        heading: "Microphones",
-        text: "Manley Reference Gold Tube Microphone, Neumann TLM102 Large Diaphragm Condenser Microphone, Shure 55S Vintage Microphone (1958)."
-      },
-      {
-        heading: "Synths & Organs",
-        text: "Moog Prodigy (1979), Sequential Circuits Pro One (1982), Roland Juno 106 (1985), Roland VP-330 Vocoder Plus (1980), Roland SH-2000 (1974), Korg Polysix (1982), Yamaha DX7s (1988), Vox Corinthian Organ (1969), Farfisa Compact Duo Organ (1966), Roland TR-707 Drum Machine (1986), Roland TR-8S Drum Machine, Kawai VPC1 88-Key Virtual Piano MIDI Controller."
-      },
-      {
-        heading: "Guitars & Basses",
-        text: "Fender Jaguar, Gibson SG, Epiphone Casino Coupe, Founder Les Paul (1971), Harley Benton RB-612, Hofner Parlour Guitar (1964), Maton SRS70C, Sigma 000M-15E, Katoh KF Flamenco, Fender Jazz Bass, Hofner Contemporary Cavern Violin Bass."
-      },
-      {
-        heading: "Plugins",
-        text: "Fabfilter complete, large Universal Audio collection, Soundtoys complete, Black Rooster complete, Baby Audio complete, Melodyne, Antares Autotune, and others from Softtube, Brainworx and Klanghelm."
-      },
-      {
-        heading: "Virtual Instruments",
-        text: "Spitfire Symphony Orchestra complete (+ dozens of other Spitfire libraries), Arturia complete, Output complete, Native Instruments Komplete, Teletone Audio complete, Superior Drummer 3, Mojo Horns 2, Samples From Mars complete, Goran Grooves complete, and others from Circle Drums, Sonuscore, Pianobook, Soundiron, Soundspot and 8DIO."
-      },
-      {
-        heading: "Paid Subscriptions",
-        text: "Splice, Soundly, Musiversal, Kits.AI, Suno, lalals, lalal.ai."
-      }
-    ]
   },
 
   // ----------------------------------------------------------
