@@ -678,16 +678,18 @@ const SITE_DATA = {
     photoAlt: "Terry Mann's home studio",
     items: [
       {
-        type: "image",
-        image: "images/studio.jpg",
+        youtubeId: "e0vvhxAlFb8",
+        title: "Panel Build",
         desc: "Placeholder text — fill in later."
       },
       {
         youtubeId: "Ru4od9Emy-g",
+        title: "Studio Build",
         desc: "Placeholder text — fill in later."
       },
       {
         youtubeId: "_hmOcBuk4YE",
+        title: "Cabinet Build",
         desc: "Placeholder text — fill in later."
       }
     ],
