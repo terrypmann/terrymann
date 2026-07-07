@@ -397,13 +397,13 @@ const SITE_DATA = {
       desc: "Instrumental desert rock and thumping stadium house music for 'Battle Cats' anniversary teaser trailer – a mobile game that has just reached 100 million downloads.",
       credit: "Music Supervision: made by ikigai",
       youtubeId: "AOnxQqI4qwI"
-    }
+    },
     {
       title: "Battle Cats #2 (Japan)",
       desc: "Funky instrumental with a 70s Japanese cinema flavour for 'Battle Cats' giveaway promo.",
       credit: "Music Supervision: made by ikigai",
       youtubeId: "qxzKMi-Pzgs"
-    },
+    }
   ],
 
   // ----------------------------------------------------------
