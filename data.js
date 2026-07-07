@@ -97,6 +97,12 @@ const SITE_DATA = {
       youtubeId: "dhgbU7jVbrE"
     },
     {
+      title: "KFC",
+      desc: "Full choir/orchestral reimagination of 'Carol of The Bells' using only KFC menu items.",
+      credit: "Agency: Sunday Gravy",
+      youtubeId: "gT0SJdCa6dM"
+    },
+    {
       title: "Swisse",
       desc: "Driving, up-tempo composition for Swisse 'Go With Your Gut' brand campaign, featuring Chris Hemsworth.",
       credit: "Agency: Noisy Beast",
@@ -205,6 +211,12 @@ const SITE_DATA = {
       youtubeId: "StUxl1qEPrM"
     },
     {
+      title: "Advance Pet Care",
+      desc: "Abstract, ambient composition leading to heartwarming, homely score.",
+      credit: "Agency: Droga5",
+      youtubeId: "https://youtu.be/CZCmQst3fqk"
+    }
+    {
       title: "Amazon Prime",
       desc: "Quirky orchestral composition incorporating an existing brand melody for Amazon Prime 'One Day' campaign.",
       credit: "Music Supervision: Massive Music",
@@ -265,6 +277,12 @@ const SITE_DATA = {
       youtubeId: "0SuN9HyXVrY"
     },
     {
+      title: "Amazon Fire (USA)",
+      desc: "Peachy by Coach Bombay used in Amazon Fire 'find what you're looking for' TVC.",
+      credit: "Music Supervision: Supreme (New York)",
+      youtubeId: "BRSMQQSi1pA"
+    },
+    {
       title: "The Funderdome",
       desc: "Funky-soul theme song for The Funderdome, a brand new nostalgia-drenched arcade, bar, mini-golf and events space.",
       credit: "Agency: The Thought Police",
@@ -313,6 +331,12 @@ const SITE_DATA = {
       desc: "Up tempo bossa nova reimagination of existing Visit Victoria campaign melody (by Bullant) for King Valley TVC.",
       credit: "Agency: AJF Partnership",
       youtubeId: "Dip1n0NbIy0"
+    },
+    {
+      title: "Amazon Prime (UK)",
+      desc: "Funky instrumental with escalating key changes for Amazon Prime 'great brands, prices you'll love' TVC.",
+      credit: "Music Supervision: made by ikigai",
+      youtubeId: "wpbhf4wfc-0"
     },
     {
       title: "VicHealth",
@@ -369,10 +393,16 @@ const SITE_DATA = {
       youtubeId: "onhM2M87wRw"
     },
     {
-      title: "Battle Cats (Japan)",
+      title: "Battle Cats #1 (Japan)",
       desc: "Instrumental desert rock and thumping stadium house music for 'Battle Cats' anniversary teaser trailer – a mobile game that has just reached 100 million downloads.",
       credit: "Music Supervision: made by ikigai",
       youtubeId: "AOnxQqI4qwI"
+    }
+    {
+      title: "Battle Cats #2 (Japan)",
+      desc: "Funky instrumental with a 70s Japanese cinema flavour for 'Battle Cats' giveaway promo.",
+      credit: "Music Supervision: made by ikigai",
+      youtubeId: "qxzKMi-Pzgs"
     }
   ],
 
@@ -418,7 +448,7 @@ const SITE_DATA = {
     },
     {
       title: "Showtime: The L Word",
-      desc: "'Founder & CEO – Do You Dare (feat. Belle Doron)' featured in S03E09 of Showtime's The L Word: Generation Q.",
+      desc: "'Founder & CEO – Do You Dare (ft. Belle Doron)' featured in S03E09 of Showtime's The L Word: Generation Q.",
       credit: "Record Label: Field Supply",
       youtubeId: "8bUIFQ4SFEI"
     },
@@ -427,6 +457,12 @@ const SITE_DATA = {
       desc: "'Founder & CEO – Golden' featured in S13E05 of BBC's long running drama series Waterloo Road.",
       credit: "Record Label: Field Supply",
       youtubeId: "qwwFyKLj2QI"
+    },
+    {
+      title: "Netflix: Olympo",
+      desc: "'Founder & CEO – Do You Dare (ft. Belle Doron)' featured in Netflix's Spanish youth sport drama Olympo.",
+      credit: "Record Label: Field Supply",
+      youtubeId: "tec7x5WZKHc"
     },
     {
       title: "Bondi Rescue",
