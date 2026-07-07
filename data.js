@@ -215,7 +215,7 @@ const SITE_DATA = {
       desc: "Abstract, ambient composition leading to heartwarming, homely score.",
       credit: "Agency: Droga5",
       youtubeId: "https://youtu.be/CZCmQst3fqk"
-    }
+    },
     {
       title: "Amazon Prime",
       desc: "Quirky orchestral composition incorporating an existing brand melody for Amazon Prime 'One Day' campaign.",
@@ -403,7 +403,7 @@ const SITE_DATA = {
       desc: "Funky instrumental with a 70s Japanese cinema flavour for 'Battle Cats' giveaway promo.",
       credit: "Music Supervision: made by ikigai",
       youtubeId: "qxzKMi-Pzgs"
-    }
+    },
   ],
 
   // ----------------------------------------------------------
