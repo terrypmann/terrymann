@@ -73,7 +73,7 @@ const SITE_DATA = {
       youtubeId: "YCgFIymtxa0"
     },
     {
-      title: "Tommy Hilfiger (Global)",
+      title: "Tommy Hilfiger (USA)",
       desc: "Chill, summery hip-hop composition for Tommy Hilfiger Pre-Fall campaign, shot in Miami.",
       credit: "Music Supervision: Friday (UK)",
       youtubeId: "FzQ9bJ2p3qg"
@@ -101,6 +101,12 @@ const SITE_DATA = {
       desc: "Full choir/orchestral reimagination of 'Carol of The Bells' using only KFC menu items.",
       credit: "Agency: Sunday Gravy",
       youtubeId: "gT0SJdCa6dM"
+    },
+    {
+      title: "Amazon Prime (UK)",
+      desc: "Funky instrumental with escalating key changes for Amazon Prime 'great brands, prices you'll love' TVC.",
+      credit: "Music Supervision: made by ikigai",
+      youtubeId: "wpbhf4wfc-0"
     },
     {
       title: "Swisse",
@@ -157,7 +163,7 @@ const SITE_DATA = {
       youtubeId: "lfx4X6bcNgs"
     },
     {
-      title: "Vegemite – Tastes Like Australia",
+      title: "Vegemite",
       desc: "Music and lyrics for Vegemite's 'Tastes Like Australia' jingle and subsequent campaigns.",
       credit: "Agency: Thinkerbell",
       youtubeId: "2gieAZ-pKIM"
@@ -169,7 +175,7 @@ const SITE_DATA = {
       youtubeId: "gfgyZIJlT3w"
     },
     {
-      title: "Movember (Global)",
+      title: "Movember",
       desc: "Orchestral / modern urban composition for Movember 'More than a month' global campaign.",
       credit: "Agency: Sunday Gravy",
       youtubeId: "rwmR_pQTNvY"
@@ -214,7 +220,7 @@ const SITE_DATA = {
       title: "Advance Pet Care",
       desc: "Abstract, ambient composition leading to heartwarming, homely score.",
       credit: "Agency: Droga5",
-      youtubeId: "https://youtu.be/CZCmQst3fqk"
+      youtubeId: "CZCmQst3fqk"
     },
     {
       title: "Amazon Prime",
@@ -229,7 +235,7 @@ const SITE_DATA = {
       youtubeId: "GoCHss-pzUI"
     },
     {
-      title: "Swisse – Creatures of Isolation",
+      title: "Swisse",
       desc: "Playful jingle for Swisse 'Creatures of Isolation' campaign.",
       credit: "Agency: Noisy Beast",
       youtubeId: "-eckITcNZkk"
@@ -241,13 +247,13 @@ const SITE_DATA = {
       youtubeId: "oumSb53ZM5c"
     },
     {
-      title: "Mazda – Orchestral",
+      title: "Mazda",
       desc: "Cinematic orchestral/percussive composition for Mazda stock clearance.",
       credit: "Agency: GDJ",
       youtubeId: "AYAxqim5R9k"
     },
     {
-      title: "Rebel – Exclusive Range",
+      title: "Rebel",
       desc: "Glitchy, fat trap jams for Rebel Sport 'Exclusive Range' retail campaign.",
       credit: "Agency: The Monkeys",
       youtubeId: "ra4J2yxbWu4"
@@ -269,6 +275,12 @@ const SITE_DATA = {
       desc: "Musical composition for Journey Beyond TVC, integrating the gentle rhythm and SFX of a train into the piece.",
       credit: "Agency: Thinkerbell",
       youtubeId: "z_QcAk97aKk"
+    },
+    {
+      title: "Battle Cats (Japan)",
+      desc: "Funky instrumental with a 70s Japanese cinema flavour for 'Battle Cats' giveaway promo.",
+      credit: "Music Supervision: made by ikigai",
+      youtubeId: "qxzKMi-Pzgs"
     },
     {
       title: "Guide Dogs",
@@ -301,13 +313,13 @@ const SITE_DATA = {
       youtubeId: "kCtpHrfVvJ0"
     },
     {
-      title: "Vic Gov – Corona Virus",
+      title: "Victorian Government",
       desc: "Announcement sting and voiceovers for TV, radio, public transport and supermarkets, informing Victorians about Corona Virus.",
       credit: "Agency: Thinkerbell",
       youtubeId: "pT_xT1d2BYU"
     },
     {
-      title: "Nexxus Hair Care (US)",
+      title: "Nexxus Hair Care (USA)",
       desc: "Modern high-fashion electronic track for Nexxus #TheFreshFlexx campaign.",
       credit: "Music Licensing: Made by Ikigai",
       youtubeId: "gsAGorT-ECI"
@@ -319,7 +331,13 @@ const SITE_DATA = {
       youtubeId: "D8NSwarJakA"
     },
     {
-      title: "Mountain Goat – 13GOAT",
+      title: "Apple (Asia)",
+      desc: "Futuristic global electronic piece for Apple iPhone 17 Pro campaign in Indonesia and Thailand.",
+      credit: "Music Supervision: made by ikigai",
+      youtubeId: "VhYC00PexIY"
+    },
+    {
+      title: "Mountain Goat",
       desc: "Music, sound design, and VO recording of 13GOAT novelty call centre. 189 options / 56 storylines / 2 hours of audio.",
       credit: "Agency: The Monkeys",
       type: "link-image",
@@ -333,10 +351,10 @@ const SITE_DATA = {
       youtubeId: "Dip1n0NbIy0"
     },
     {
-      title: "Amazon Prime (UK)",
-      desc: "Funky instrumental with escalating key changes for Amazon Prime 'great brands, prices you'll love' TVC.",
+      title: "Battle Cats",
+      desc: "Instrumental desert rock and thumping stadium house music for 'Battle Cats' anniversary teaser trailer – a mobile game that has just reached 100 million downloads.",
       credit: "Music Supervision: made by ikigai",
-      youtubeId: "wpbhf4wfc-0"
+      youtubeId: "AOnxQqI4qwI"
     },
     {
       title: "VicHealth",
@@ -391,18 +409,6 @@ const SITE_DATA = {
       desc: "Smooth 80s track for Eric Insurance 'We're Fluent in Motorcycle' campaign.",
       credit: "Agency: Magnetiser",
       youtubeId: "onhM2M87wRw"
-    },
-    {
-      title: "Battle Cats #1 (Japan)",
-      desc: "Instrumental desert rock and thumping stadium house music for 'Battle Cats' anniversary teaser trailer – a mobile game that has just reached 100 million downloads.",
-      credit: "Music Supervision: made by ikigai",
-      youtubeId: "AOnxQqI4qwI"
-    },
-    {
-      title: "Battle Cats #2 (Japan)",
-      desc: "Funky instrumental with a 70s Japanese cinema flavour for 'Battle Cats' giveaway promo.",
-      credit: "Music Supervision: made by ikigai",
-      youtubeId: "qxzKMi-Pzgs"
     }
   ],
 
