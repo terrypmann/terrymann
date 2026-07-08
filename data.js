@@ -351,7 +351,7 @@ const SITE_DATA = {
       youtubeId: "Dip1n0NbIy0"
     },
     {
-      title: "Battle Cats",
+      title: "Battle Cats (Japan)",
       desc: "Instrumental desert rock and thumping stadium house music for 'Battle Cats' anniversary teaser trailer – a mobile game that has just reached 100 million downloads.",
       credit: "Music Supervision: made by ikigai",
       youtubeId: "AOnxQqI4qwI"
@@ -477,7 +477,7 @@ const SITE_DATA = {
     },
     {
       title: "The Project",
-      desc: "Dozens of pieces used in segments from Channel 10's The Project over the past 8 years.",
+      desc: "Dozens of pieces used in segments from Channel 10's The Project over a period of 8 years.",
       type: "link-image",
       image: "images/the-project.jpg",
       href: "https://www.youtube.com/@TheProjectTV"
@@ -542,20 +542,18 @@ const SITE_DATA = {
       youtubeId: "eiyypd6yx3k"
     },
     {
+      title: "The Hunt",
+      desc: "Composed by Terry Mann, Performed by The Budapest Symphony Orchestra. Recorded at Tom Tom Studio D (Hubay Hall), Budapest, Hungary.",
+      credits: "Executive Producer: Rita Tulha. Music Producer: Afonso Teles. Conductor: Abél Tompa. Sound Engineers: Gergő Láposi and Péter Barabás. Video edit & Mix/Master: Terry Mann.",
+      youtubeId: "gjQ4d_YjACo"
+    },
+    {
       title: "The Prance",
       comingSoon: true,
       desc: "Composed by Terry Mann, Performed by The Budapest Symphony Orchestra. Recorded at Tom Tom Studio D (Hubay Hall), Budapest, Hungary.",
       credits: "Executive Producer: Rita Tulha. Music Producer: Alex Palmer. Conductor: Daniel Erdélyi. Sound Engineer: Péter Barabás. Video edit & Mix/Master: Terry Mann.",
       type: "image",
       image: "images/orchestral/the-prance.jpg"
-    },
-    {
-      title: "The Hunt",
-      comingSoon: true,
-      desc: "Composed by Terry Mann, Performed by The Budapest Symphony Orchestra. Recorded at Tom Tom Studio D (Hubay Hall), Budapest, Hungary.",
-      credits: "Executive Producer: Rita Tulha. Music Producer: Afonso Teles. Conductor: Abél Tompa. Sound Engineers: Gergő Láposi and Péter Barabás. Video edit & Mix/Master: Terry Mann.",
-      type: "image",
-      image: "images/orchestral/the-hunt.jpg"
     },
     {
       title: "The Frolic",
