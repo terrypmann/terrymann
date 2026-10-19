@@ -771,6 +771,12 @@ const SITE_DATA = {
       photo: "images/testimonials/sara.jpg"
     },
     {
+      quote: "It’s a pleasure to write about Terry - I always look forward to working with him! He’s a fantastic writer, producer and collaborator.",
+      name: "Rani Vaz", firstName: "Rani",
+      title: "Managing Partner & Executive Creative Producer, Supreme Music (New York)",
+      photo: "images/testimonials/rani.jpg"
+    },    
+    {
       quote: "On Reef School, Terry's lighthearted, energetic sensibility and comic musical beats really support and enhance the underwater world that the quirky little characters live in. It really added another dimension!",
       name: "Karin Kitzhardinge", firstName: "Karin",
       title: "Series Producer, ABC",
